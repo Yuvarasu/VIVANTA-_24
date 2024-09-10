@@ -1,0 +1,469 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #03112d;
+  }
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  header {
+    padding: 10px 20px; /* Add padding for spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    position: relative;
+    width: 100%;
+    background: #03112d; /* Header background color */
+    color: white;
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space out logo and nav items */
+    align-items: center; /* Center items vertically */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex; /* Flexbox layout for navbar */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the navbar */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  .logo {
+    flex: 1;
+    margin-right: 15px; /* Flex grow to take up available space */
+  }
+  
+  .logo a {
+    color: #ffce08;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Navigation Links Styling */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between navigation items */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding: 10px 20px; /* Adds padding to create a box effect */
+    border-radius: 4px; /* Optional: rounded corners */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  }
+  
+  /* Hover effect */
+  .nav-links a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+  }
+  
+  /* Active (clicked) effect */
+  .nav-links a:active {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly darker background when clicked */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: inner shadow effect */
+  }
+  
+  /* Optional: Focus effect for accessibility */
+  .nav-links a:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5); /* Outline when focused */
+  }
+  
+  .button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    color: #dee0e2;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all .15s ease;
+   text-decoration:none ;
+  }
+  
+  .button::before,
+  .button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(50% - 5px);
+    transition: all .15s ease;
+  }
+  
+  .button::before {
+    top: 0;
+    border-bottom-width: 0;
+  }
+  
+  .button::after {
+    bottom: 0;
+    border-top-width: 0;
+  }
+  
+  .button:active,
+  .button:focus {
+    outline: none;
+  }
+  
+  .button:active::before,
+  .button:active::after {
+    right: 3px;
+    left: 3px;
+  }
+  
+  .button:active::before {
+    top: 3px;
+  }
+  
+  .button:active::after {
+    bottom: 3px;
+  }
+  
+  .button_lg {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #03112d;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+  }
+  
+  .button_lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #03112d;
+  }
+  
+  .button_lg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #03112d;
+    transition: all .2s ease;
+  }
+  
+  .button_sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-color: #ffce08;
+    transform: skew(-15deg);
+    transition: all .2s ease;
+  }
+  
+  .button_text {
+    position: relative;
+  }
+  
+  .button:hover {
+    color: #03112d;
+  }
+  
+  .button:hover .button_sl {
+    width: calc(100% + 15px);
+  }
+  
+  .button:hover .button_lg::after {
+    background-color: #fff;
+  }
+  .hover-underline-animation {
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  .cta {
+    display: inline-flex;
+    border: none;
+    background:none;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  
+  .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+  
+  .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+  
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  
+  .cta:active svg {
+    transform: scale(0.9);
+  }
+  
+  .hover-underline-animation {
+    position: relative;
+    color: #fff;
+    padding-bottom: 20px;
+  }
+  
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffce08;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  
+  
+  .footer {
+    background: #03112d; /* Example gradient, adjust as needed */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Relative position for proper positioning in Flexbox */
+    width: 100%;
+    bottom:0;
+  }
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Footer Content */
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .footer-logo, .footer-links, .footer-contact {
+    margin-bottom: 20px;
+  }
+  
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+  }
+  
+  .footer-icons .icon-link {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  .footer-icons .icon-link:hover {
+    color: #ddd; /* Lighter color on hover */
+  }
+  .footer-logo,
+  .footer-links,
+  .footer-contact,
+  .footer-icons {
+    margin-bottom:20px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .footer-logo,
+    .footer-links,
+    .footer-contact,
+    .footer-icons {
+        margin-bottom: 20px;
+    }
+  }
+  /* Ensure button aligns right on mobile */
+  @media (max-width: 768px) {
+    .button {
+        position: absolute; /* Position it absolutely to align it */
+        right: 20px; /* Align it to the right with padding */
+        top: 50%;
+        transform: translateY(-50%); /* Center it vertically */
+    }
+  
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative; /* Ensure relative positioning for the button */
+    }
+  
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: #03112d;
+        position: absolute; /* Absolute positioning for the accordion effect */
+        top: 60px; /* Adjust based on your button's height */
+        left: 0;
+    }
+  
+    .nav-links.active {
+        display: flex;
+    }
+  
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+    }
+  
+    .nav-links a {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  
+    .menu-icon {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #fff;
+        margin: 10px 0;
+    }
+  
+    .menu-icon:before {
+        content: '\f0c9'; /* FontAwesome hamburger icon */
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+  }
+  
+  /* Display menu when toggled */
+  #menu-toggle:checked ~ .navbar .nav-links {
+    display: flex;
+  }
+  
+  /* Ensure that content within the carousel and footer works well on mobile */
+  .container, .footer-content {
+    width: 100%;
+  }
+  
+  .container .slide {
+    display: flex;
+    overflow-x: auto;
+  }
+  
+  .item {
+    min-width: 100%;
+  }
+  #menuToggle {
+    display: none;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  #menuToggle input {
+    display: none;
+  }
+  
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: #cdcdcd;
+    border-radius: 3px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+  }
+  
+  #menuToggle input:checked ~ span {
+    background: #03112d;
+    transform: rotate(45deg) translate(-2px, -1px);
+  }
+  
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  #menu {
+    position: absolute;
+    width: 300px;
+    background: #ededed;
+    list-style-type: none;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+  
+  #menu li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+  
+  #menuToggle input:checked ~ #menu {
+    transform: none;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Hide the original navigation links */
+    }
+    
+    #menuToggle {
+      display: block; /* Show burger menu */
+    }
+  }  
